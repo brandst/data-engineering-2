@@ -16,7 +16,7 @@ git clone <repository-url>
 ```
 
 ### Step 2: Install Docker & Docker Compose
-1. Navigate to the `installation_script/` directory in the data-engineering-2 folder:
+1. Navigate to the `installation_script/` directory in the `data-engineering-2/` folder:
    ```bash
    cd installation_script/
    ```
