@@ -109,7 +109,7 @@ gcloud compute firewall-rules create kafka-port --allow tcp:9092
 1. Create a dataset named **labdataset**:
    - In the BigQuery interface, click the 3 dots next to your project ID.
    - Select **Create Dataset** and name it `labdataset`.
-2. Create a table named **IMDB_Top_1000** with the following schema:
+2. Create a table named **IMDB_Top_1000** by copying and running the following query (click on the `+` for a new query):
    ```sql
    CREATE TABLE labdataset.IMDB_Top_1000 (
        Poster_Link STRING,
