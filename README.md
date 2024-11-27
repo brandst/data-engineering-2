@@ -56,7 +56,7 @@ git clone <repository-url>
    ```
    - Press `i` to type.
    - Modify the following variables:
-     - **USERNAME**: Set to your username (the name visible before `@instance` in SSH).
+     - **USERNAME**: Set to your username (the name visible before `@instance` in SSH. Double check if it's correct! Otherwise it can be hard to undo this).
      - **EXTERNAL_IP**: Add the external IP of your VM. *(This step needs to be repeated after restarting the machine.)*
    - Save changes:
      - Press `Esc` to stop typing.
