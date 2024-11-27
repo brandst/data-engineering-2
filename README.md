@@ -74,7 +74,7 @@ git clone <repository-url>
 ---
 
 ### Step 6: Configure Firewall Rules
-Run the following commands in **Cloud Shell**:
+Run the following commands in **Cloud Shell** (at the top of the page, near your google account logo):
 ```bash
 gcloud compute firewall-rules create jupyter-port --allow tcp:8888
 gcloud compute firewall-rules create spark-master-port --allow tcp:7077
