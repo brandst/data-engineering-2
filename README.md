@@ -10,13 +10,13 @@
 ## Setup Instructions
 
 ### Step 1: Clone Repository
-Clone the repository to your Virtual Machine (VM):
+Clone the repository to your Virtual Machine (VM) in SSH:
 ```bash
 git clone <repository-url>
 ```
 
 ### Step 2: Install Docker & Docker Compose
-1. Navigate to the `installation_script/` directory:
+1. Navigate to the `installation_script/` directory in the data-engineering-2 folder:
    ```bash
    cd installation_script/
    ```
