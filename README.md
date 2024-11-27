@@ -50,7 +50,7 @@ git clone <repository-url>
    ```bash
    cd deployment/
    ```
-2. Open and edit the `.env` file using `vim`:
+2. Open and edit the `.env` (hidden file) file using `vim`:
    ```bash
    vi .env
    ```
