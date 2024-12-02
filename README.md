@@ -118,10 +118,12 @@ sudo docker compose up -d
 
 ---
 
-### Create Dataset and Table (This step is actually not necessary if you use BigQueryLoaderReader.ipynb as described in the next step. It will create a new table.)
+### Create Dataset and Table 
 1. Create a dataset named **labdataset**:
    - In the BigQuery interface, click the 3 dots next to your project ID.
    - Select **Create Dataset** and name it `labdataset`.
+
+#### The following step (2) is actually not necessary if you use BigQueryLoaderReader.ipynb as described in the Data Upload and Analysis step below. It will create a new table.
 2. Create a table named **IMDB_Top_1000** by copying and running the following query (click on the `+` for a new query):
    ```sql
    CREATE TABLE labdataset.IMDB_Top_1000 (
