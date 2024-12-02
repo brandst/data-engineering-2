@@ -2,6 +2,12 @@
 # Project Setup Instructions
 
 ## General Information
+- Use a Virtual Machine with multiple cores (e.g. type e2-standard-8 (8 vCPUs, 32 GB memory))
+- Ensure the following VM settings:
+   - Ubuntu 24.04 LTS (x86/64)
+   - Enable access to All Google Cloud service APIs
+   - Allow both HTTP and HTTPs traffic
+  
 - Use **SPARK** for data processing (not pandas).
 - **BigQuery** for database operations and queries.
 
