@@ -8,7 +8,8 @@ from pyspark.sql.window import Window
 
 # Spark Configuration
 sparkConf = SparkConf()
-sparkConf.setMaster("spark://spark-master:7077") 
+#We don't have to set the master, Spark automatically finds it
+#sparkConf.setMaster("spark://spark-master:7077") 
 sparkConf.setAppName("IMDB_Analysis")
 sparkConf.set("spark.driver.memory", "2g")
 sparkConf.set("spark.executor.cores", "1")
