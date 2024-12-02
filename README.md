@@ -156,11 +156,14 @@ sudo docker compose up -d
 
 2. **Data Folder:**
    - Upload the dataset (IMDB data) to the **data** folder.
+   - Open the `BigQueryLoaderReader.ipynb` notebook.
+   - Run it.
 
 3. **Run Analysis:**
    - Open the `IMDB_analysis_batch` notebook in JupyterLab.
    - Verify the variables in the third cell are correctly set.
-
+   - Run it.
+   
 4. **Result:**
    - New tables will appear in the `labdataset` in BigQuery.
 
