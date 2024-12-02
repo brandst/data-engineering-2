@@ -25,7 +25,7 @@ conf.set("fs.AbstractFileSystem.gs.impl", "com.google.cloud.hadoop.fs.gcs.Google
 
 # Define BigQuery dataset and table and bucketname
 project_id = "dataengineering-439112"
-dataset_table = "labdataset.imdb_top_1000"
+dataset_table = "labdataset.IMDB_Top_1000"
 output_table = "labdataset.imdb_analysis"
 bucket_name = "imdb-output-bucket"
 # Read data from BigQuery table
