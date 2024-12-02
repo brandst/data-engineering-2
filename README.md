@@ -95,6 +95,12 @@ gcloud compute firewall-rules create kafka-port --allow tcp:9092
 ---
 
 ### Step 7: Access JupyterLab
+From the `deployment/` folder:
+
+(Ensure to restart the containers when the VM has been stopped: 
+```bash
+sudo docker compose up -d
+```
 1. Check the logs for the JupyterLab URL:
    ```bash
    sudo docker logs spark-driver-app
