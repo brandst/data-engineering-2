@@ -1,5 +1,5 @@
 from kafka import KafkaProducer
-
+import json
 
 def kafka_python_producer_sync(producer, msg, topic):
     producer.send(topic, bytes(msg, encoding='utf-8'))
@@ -21,9 +21,9 @@ def kafka_python_producer_async(producer, msg, topic):
 
 
 if __name__ == '__main__':
-    producer = KafkaProducer(bootstrap_servers='34.29.182.46:9092')  # use your VM's external IP Here!
+    producer = KafkaProducer(bootstrap_servers='34.123.5.62:9092')  # use your VM's external IP Here!
     # value_serializer = lambda v: json.dumps(v).encode('utf-8')
-    path = "path_to_file"
+    path = "C:\Users\thier\OneDrive\Documenten\JADS\Year 2\Data Engineering\data-engineering-2\data\imdb_Movie_Reviews.json"
     with open(path) as f:   # change this path to the path in your laptop
         json_data = json.load(f)
 
