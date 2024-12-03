@@ -47,7 +47,7 @@ class KafkaMessageConsumer(Thread):
     def __init__(self, topic):
         Thread.__init__(self)
         self.consumer = KafkaConsumer(bootstrap_servers='VMIP:9092',  # use your VM's external IP Here!
-                                      auto_offset_reset='earliest',
+                                      auto_offset_reset='latest',
                                       consumer_timeout_ms=10000)
 
         self.consumer.subscribe(topics=[topic])
@@ -64,6 +64,6 @@ class KafkaMessageConsumer(Thread):
 
 if __name__ == '__main__':
     configure_logger()
-    c1 = KafkaMessageConsumer('avg_score')
+    c1 = KafkaMessageConsumer('best_rated_by_critic_nationality')
     c1.start()
     c1.join()
