@@ -21,11 +21,14 @@ def kafka_python_producer_async(producer, msg, topic):
 
 
 if __name__ == '__main__':
-    producer = KafkaProducer(bootstrap_servers='VM_External_IP:9092')  # use your VM's external IP Here!
-    with open('C:\projects\DE2023\lab9\data\wordstream.txt') as f:   # change this path to the path in your laptop
-        lines = f.readlines()
+    producer = KafkaProducer(bootstrap_servers='34.29.182.46:9092')  # use your VM's external IP Here!
+    # value_serializer = lambda v: json.dumps(v).encode('utf-8')
+    path = "path_to_file"
+    with open(path) as f:   # change this path to the path in your laptop
+        json_data = json.load(f)
 
-    for line in lines:
-        kafka_python_producer_sync(producer, line, 'word')
-
+    # Process each JSON object in the file
+    for data in json_data:
+        print('Is this a JSON object? ', data)
+        kafka_python_producer_sync(producer, json.dumps(data), 'movie_reviews')
     f.close()
