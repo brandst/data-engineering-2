@@ -20,7 +20,7 @@ def kafka_python_producer_async(producer, msg, topic):
 if __name__ == '__main__':
     producer = KafkaProducer(bootstrap_servers='34.31.254.144:9092')  # use your VM's external IP Here!
     # value_serializer = lambda v: json.dumps(v).encode('utf-8')
-    path = "C:/Users/thier/OneDrive/Documenten/JADS/Year 2/Data Engineering/data-engineering-2/data/imdb_Movie_Reviews.json"
+    path = "C:/Users/thier/OneDrive/Documenten/JADS/Year 2/Data Engineering/data-engineering-2/data/imdb_Movie_Reviews_with_Overall_Rating.json"
     
     with open(path) as f:  # change this path to the path on your laptop
         json_data = json.load(f)

@@ -8,7 +8,7 @@ from time import sleep
 # Stream File in .py format for dataproc usage
 
 sparkConf = SparkConf()
-sparkConf.setMaster("spark://spark-master:7077")
+#sparkConf.setMaster("spark://spark-master:7077")
 sparkConf.setAppName("StreamingReviews")
 sparkConf.set("spark.driver.memory", "2g")
 sparkConf.set("spark.executor.cores", "1")
