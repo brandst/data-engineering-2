@@ -1,3 +1,12 @@
+# IMDB Movie Analysis
+This project processes and analyzing IMDb movie data using Apache Spark for distributed data processing and Google BigQuery for database operations. 
+The goal is to provide insights for stakeholders, such as movie enthusiasts, production companies, and streaming platforms, through visualizations created in Looker Studio.
+
+Key Features:
+- Scalable Data Processing: Spark pipelines can efficiently handle large movie datasets.
+- Batch and Stream Processing: We use real-time stream processing with Spark Structured Streaming to analyze low-rating movie reviews as they arrive. Additionally, batch processing is used for historical data.
+- Cloud Integration: deployed on Google Cloud Platform with BigQuery for data storage and querying.
+- Interactive Dashboards with visual insights tailored for stakeholders.
 
 # Project Setup Instructions
 
