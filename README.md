@@ -163,7 +163,7 @@ sudo docker compose up -d
    - Open JupyterLab using the updated URL.
    - Upload the following to the **notebooks** folder:
      - `BigQueryLoaderReader.ipynb` notebook.
-     - `IMDB_analysis_batch` notebook.
+     - Batch notebook (`pipelines/imdb_analysis_batch_additional.ipynb`).
 
 2. **Data Folder:**
    - Upload the dataset (IMDB data) to the **data** folder.
@@ -171,7 +171,7 @@ sudo docker compose up -d
    - Run it.
 
 3. **Run Analysis:**
-   - Open the `IMDB_analysis_batch` notebook in JupyterLab.
+   - Open the Batch notebook in JupyterLab.
    - Verify the variables in the third cell are correctly set.
    - Run it.
    
@@ -179,4 +179,75 @@ sudo docker compose up -d
    - New tables will appear in the `labdataset` in BigQuery.
 
 ---
+
+
+## Stream Processing
+
+To set up and execute stream processing, follow these steps in order:
+1. Upload the Stream notebook to Jupyterlab on the VM.
+
+2. **Run `kafkaadmin.py`**:
+   - Ensure the correct external IP is specified in the file.
+
+3. **Run the Stream Notebook**:
+   - Open JupyterLab on the VM and execute the stream notebook.
+
+4. **Run `producer.py`**:
+   - Ensure the correct external IP and the correct path to the data file are specified.
+
+5. **Run `multithread-consumer.py`.**
+
+6. **Check BigQuery**:
+   - View the results in the BigQuery table.
+
+---
+
+## Spark Jobs on Google Dataproc
+
+### Enable Required APIs:
+1. **Cloud Dataproc API**
+2. **Cloud Resource Manager API**
+
+---
+
+### Dataproc Setup:
+
+1. **Create Cluster**:
+   - Use **Compute Engine**.
+   - **Enable Component Gateway** and **Jupyter Notebook for the Cluster**.
+
+2. **Configure Nodes**:
+   - For both master and worker configurations, ensure:
+     - **Machine Type**: `n2-standard-2` (2 vCPUs, 8 GB memory).
+     - **Primary Disk Size**: 50 GB.
+
+3. **Customize Cluster**:
+   - Under "Internal IP Only," uncheck "Configure all instances to have only internal IP."
+
+4. **Note**:
+   - Ignore error messages if the setup works correctly.
+
+---
+
+### Running Spark Jobs
+
+1. **Prepare the Spark File**:
+   - Adjust the `project ID` and `bucket name` in the dataproc Stream file (`pipelines/dataproc_...`.
+
+2. **Upload to Storage Bucket**:
+   - Upload the dataproc Stream file to the Google Cloud Storage bucket.
+   - Locate the **GS URL** of the file (e.g., `gs://imdb-spark-stream/<filename>.py`).
+
+3. **Submit Spark Job**:
+   - Go to **Dataproc** > **Clusters** > **Submit Job**.
+   - Set **Job Type** to **PySpark**.
+   - Use the **GS URL** as the main Python file.
+
+4. **Additional Configuration for Kafka** (if utilized):
+   - In **Dataproc** > **Submit Jobs**, add the following property:
+     - **Key**: `spark.jars.packages`
+     - **Value**: `org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1`
+
+---
+
 
